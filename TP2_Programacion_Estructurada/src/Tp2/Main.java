@@ -132,6 +132,33 @@ public class Main {
         }while(numero!=0);
         System.out.println("Suma: "+suma);
     }
+    
+    public static void punto6(Scanner scan)
+    {
+        int numero;
+        int positivo=0;
+        int negativo=0;
+        int cero=0;
+        
+        for(int x=0;x<10;x++)
+        {
+            System.out.println("Ingrese un numero ("+(x+1)+"/10");
+            numero=scan.nextInt();
+            if(numero>0)
+            {
+                positivo++;
+            }
+            else if(numero<0)
+            {
+                negativo++;
+            }
+            else
+            {
+                cero++;
+            }
+        }
+        System.out.println("Positivos: "+positivo+"\n Negativos: "+negativo+"\n Ceros: "+cero);
+    }
     /**
      * @param args the command line arguments
      */
@@ -141,7 +168,8 @@ public class Main {
         //punto2(scan);
         //punto3(scan);
         //punto4(scan);
-        punto5(scan);
+        //punto5(scan);
+        punto6(scan);
         
         scan.close();
     }
