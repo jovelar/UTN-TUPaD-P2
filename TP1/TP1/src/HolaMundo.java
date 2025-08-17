@@ -94,7 +94,7 @@ public class HolaMundo {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
         punto2();
-       /*
+       
         punto3();
         punto4(scan);
         punto5(scan);
@@ -103,7 +103,7 @@ public class HolaMundo {
         punto8();
         scan.nextLine();
         punto9(scan);
-        */
+        
         
         scan.close();
     }
