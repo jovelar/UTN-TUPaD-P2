@@ -159,6 +159,73 @@ public class Main {
         }
         System.out.println("Positivos: "+positivo+"\n Negativos: "+negativo+"\n Ceros: "+cero);
     }
+    
+    public static void punto7(Scanner scan)
+    {
+        int numero=0;
+        do{
+            System.out.println("Ingrese un numero comprendido entre 0 y 10: ");
+            numero=scan.nextInt();
+            if(numero<0 || numero>10)
+            {
+                System.out.println("Numero Invalido");
+            }
+        }while(numero<0 || numero >10);
+    }
+    
+    public static double calcularPrecioFinal(double precioBase, double impuesto, double descuento)
+    {
+        double precioFinal=0;
+        precioFinal=(precioBase*(1-(descuento/100))+(precioBase*(impuesto/100)));
+        return precioFinal;
+    }
+    
+    public static void punto8(Scanner scan)
+    {
+        double precioFinal;
+        System.out.println("Ingrese el precio base del producto: ");
+        double precio=scan.nextDouble();
+        System.out.println("Ingrese el impuesto en porcentaje: ");
+        double impuesto=scan.nextDouble();
+        System.out.println("Ingrese el descuento en porcentaje: ");
+        double descuento=scan.nextDouble();
+        precioFinal=calcularPrecioFinal(precio,impuesto, descuento);
+        System.out.println("El precio final es de "+precioFinal);
+    }
+    
+    public static double calcularCostoEnvio(double peso, String zona){
+        double costo=0;
+        
+        if(zona.toUpperCase().equals("NACIONAL")){
+            costo=peso*5;
+        }
+        else{
+            costo=peso*10;
+        }
+        return costo;
+    }
+    
+    public static double calcularTotalCompra(double precioProducto,double costoEnvio){
+        double costoTotal=precioProducto + costoEnvio;
+        return costoTotal;
+    }
+    
+    public static void punto9(Scanner scan)
+    {
+        double precioFinal=0;
+        System.out.println("Ingrese el precio del producto: ");
+        double precio=scan.nextDouble();
+        System.out.println("Ingrese el peso del paquete en Kilos: ");
+        double peso=scan.nextDouble();
+        scan.nextLine();
+        System.out.println("Ingrese la zona de envio Nacional/Internacional: ");
+        String zona=scan.nextLine();
+        
+        precioFinal=calcularTotalCompra(precio,calcularCostoEnvio(peso, zona));
+        
+        System.out.println("El costo del envio es de "+calcularCostoEnvio(peso, zona));
+        System.out.println("El precio final es de :"+precioFinal);
+    }
     /**
      * @param args the command line arguments
      */
@@ -169,8 +236,10 @@ public class Main {
         //punto3(scan);
         //punto4(scan);
         //punto5(scan);
-        punto6(scan);
-        
+        //punto6(scan);
+        //punto7(scan);
+        //punto8(scan);
+        punto9(scan);
         scan.close();
     }
     
