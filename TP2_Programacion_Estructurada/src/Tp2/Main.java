@@ -11,6 +11,10 @@ import java.util.Scanner;
  */
 public class Main {
     
+    //Variable del punto 10
+    public static double variableGlobal = 0.10;
+    
+    
     public static boolean validaBisiesto(int anio)
     {
         boolean bisiesto=false;
@@ -226,6 +230,86 @@ public class Main {
         System.out.println("El costo del envio es de "+calcularCostoEnvio(peso, zona));
         System.out.println("El precio final es de :"+precioFinal);
     }
+    
+    public static int actualizarStock(int stockActual, int cantidadVendida, int cantidadRecibida){
+        int nuevoStock=0;
+        nuevoStock=stockActual-cantidadVendida+cantidadRecibida;
+        return nuevoStock;
+    }
+    
+    public static void punto10(Scanner scan)
+    {
+        System.out.println("Ingrese el stock actual del producto: ");
+        int stockActual=scan.nextInt();
+        
+        System.out.println("Ingrese la cantidad vendida: ");
+        int cantidadVendida=scan.nextInt();
+        
+        System.out.println("Ingrese la cantidad recibida: ");
+        int cantidadRecibida=scan.nextInt();
+        
+        int nuevoStock=actualizarStock(stockActual, cantidadVendida, cantidadRecibida);
+        
+        System.out.println("El nuevo stock del producto es: "+nuevoStock);
+    }
+    
+    public static void calcularDescuentoEspecial(double precio){
+        
+        double descuentoAplicado=precio*variableGlobal;
+        System.out.println("El descuento especial aplicado es: "+descuentoAplicado);
+        System.out.println("El precio final con descuento es "+(precio*(1-variableGlobal)));
+    }
+    
+    public static void punto11(Scanner scan){
+        System.out.println("Ingrese el precio: ");
+        double precio=scan.nextDouble();
+        calcularDescuentoEspecial(precio);
+    }
+    
+    public static void punto12(){
+        //A- Declarando arreglo.
+        double[] precios={199.99,299.5,149.75,399.0,89.99};
+        
+        //B- Mostrando los valores originales
+        System.out.println("Precios originales: ");
+        for(double precio:precios)
+        {
+            System.out.println("Precio $"+precio);
+        }
+        
+        //C- Modificando un precio
+        precios[2]=129.99;
+        
+        //D- Mostrando la lista modificada
+        System.out.println("Precios modificados: ");
+        for(double precio:precios)
+        {
+            System.out.println("Precio $"+precio);
+        }
+    }
+    
+    public static void mostrarRecursivo(double precios[], int posicion){
+        if(posicion<precios.length)
+        {
+            System.out.println("Precio: "+precios[posicion]);
+            posicion++;
+            mostrarRecursivo(precios,posicion);
+        }
+    }
+    public static void punto13(){
+        //A- Declarando arreglo.
+        double[] precios={199.99,299.5,149.75,399.0,89.99};
+        
+        //B- Mostrando los valores originales
+        mostrarRecursivo(precios, 0);
+        
+        //C- Modificando un precio
+        precios[2]=129.99;
+        
+        //D- Mostrando la lista modificada
+        System.out.println("Precios modificados: ");
+        mostrarRecursivo(precios, 0);
+    }
     /**
      * @param args the command line arguments
      */
@@ -239,7 +323,11 @@ public class Main {
         //punto6(scan);
         //punto7(scan);
         //punto8(scan);
-        punto9(scan);
+        //punto9(scan);
+        //punto10(scan);
+        //punto11(scan);
+        //punto12();
+        punto13();
         scan.close();
     }
     
