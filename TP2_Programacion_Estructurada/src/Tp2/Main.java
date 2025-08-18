@@ -89,7 +89,7 @@ public class Main {
     
     public static void punto4(Scanner scan)
     {
-        System.out.println("### Punto 1 ###");
+        System.out.println("### Punto 4 ###");
         System.out.println("Ingrese el precio del producto: ");
         float precioBase=scan.nextFloat();
         String opcion="x";
@@ -124,6 +124,7 @@ public class Main {
     
     public static void punto5(Scanner scan)
     {
+        System.out.println("### Punto 5 ###");
         int numero;
         int suma=0;
         do{
@@ -139,6 +140,7 @@ public class Main {
     
     public static void punto6(Scanner scan)
     {
+        System.out.println("### Punto 6 ###");
         int numero;
         int positivo=0;
         int negativo=0;
@@ -166,6 +168,7 @@ public class Main {
     
     public static void punto7(Scanner scan)
     {
+        System.out.println("### Punto 7 ###");
         int numero=0;
         do{
             System.out.println("Ingrese un numero comprendido entre 0 y 10: ");
@@ -186,6 +189,7 @@ public class Main {
     
     public static void punto8(Scanner scan)
     {
+        System.out.println("### Punto 8 ###");
         double precioFinal;
         System.out.println("Ingrese el precio base del producto: ");
         double precio=scan.nextDouble();
@@ -216,6 +220,7 @@ public class Main {
     
     public static void punto9(Scanner scan)
     {
+        System.out.println("### Punto 9 ###");
         double precioFinal=0;
         System.out.println("Ingrese el precio del producto: ");
         double precio=scan.nextDouble();
@@ -239,6 +244,7 @@ public class Main {
     
     public static void punto10(Scanner scan)
     {
+        System.out.println("### Punto 10 ###");
         System.out.println("Ingrese el stock actual del producto: ");
         int stockActual=scan.nextInt();
         
@@ -261,12 +267,14 @@ public class Main {
     }
     
     public static void punto11(Scanner scan){
+        System.out.println("### Punto 11 ###");
         System.out.println("Ingrese el precio: ");
         double precio=scan.nextDouble();
         calcularDescuentoEspecial(precio);
     }
     
     public static void punto12(){
+        System.out.println("### Punto 12 ###");
         //A- Declarando arreglo.
         double[] precios={199.99,299.5,149.75,399.0,89.99};
         
@@ -297,6 +305,7 @@ public class Main {
         }
     }
     public static void punto13(){
+        System.out.println("### Punto 13 ###");
         //A- Declarando arreglo.
         double[] precios={199.99,299.5,149.75,399.0,89.99};
         
@@ -315,18 +324,18 @@ public class Main {
      */
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
-        //punto1(scan);
-        //punto2(scan);
-        //punto3(scan);
-        //punto4(scan);
-        //punto5(scan);
-        //punto6(scan);
-        //punto7(scan);
-        //punto8(scan);
-        //punto9(scan);
-        //punto10(scan);
-        //punto11(scan);
-        //punto12();
+        punto1(scan);
+        punto2(scan);
+        punto3(scan);
+        punto4(scan);
+        punto5(scan);
+        punto6(scan);
+        punto7(scan);
+        punto8(scan);
+        punto9(scan);
+        punto10(scan);
+        punto11(scan);
+        punto12();
         punto13();
         scan.close();
     }
