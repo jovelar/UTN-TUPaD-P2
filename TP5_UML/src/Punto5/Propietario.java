@@ -6,7 +6,7 @@ package Punto5;
 
 /**
  *
- * @author Isaias
+ * @author Isaias Ovelar
  */
 public class Propietario {
     private int dni;
