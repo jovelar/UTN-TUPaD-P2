@@ -2,22 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Punto7;
+package Punto8;
 
 /**
  *
- * @author Isaias
+ * @author isaias Ovelar
  */
-public class Motor {
-    private int numeroSerie;
-    private String tipo;
+public class Usuario {
+    private String nombre;
+    private String email;
     
-    public Motor(){
+    public Usuario(){
         
     }
     
-    public Motor(int numeroSerie,String tipo){
-        this.numeroSerie=numeroSerie;
-        this.tipo=tipo;
+    public Usuario(String nombre, String email){
+        this.nombre=nombre;
+        this.email=email;
     }
 }

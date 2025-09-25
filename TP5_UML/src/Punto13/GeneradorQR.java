@@ -2,22 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Punto7;
+package Punto13;
 
 /**
  *
- * @author Isaias
+ * @author isaia
  */
-public class Motor {
-    private int numeroSerie;
-    private String tipo;
+public class GeneradorQR {
     
-    public Motor(){
+    public GeneradorQR(){
         
     }
     
-    public Motor(int numeroSerie,String tipo){
-        this.numeroSerie=numeroSerie;
-        this.tipo=tipo;
+    public void generar(String valor, Usuario usuario){
+        CodigoQR codigoNuevo = new CodigoQR(valor);
+        codigoNuevo.setUsuario(usuario);
     }
+    
 }
