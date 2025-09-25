@@ -16,7 +16,9 @@ public class Foto {
     public Foto(){
         
     }
-    
+    public Foto(){
+        
+    }
     public Foto(String imagen, String formato){
         this.imagen=imagen;
         this.formato=formato;

@@ -15,6 +15,7 @@ import Punto1.Foto;
 public class Pasaporte {
     private int numero;
     private String fechaEmision;
+    private Titular titular;
     private Foto foto;
     
     public Pasaporte(){
@@ -25,5 +26,16 @@ public class Pasaporte {
         this.numero=numero;
         this.fechaEmision=fechaEmision;
         this.foto=new Foto(imagen, formato);
+    }
+    
+    public void setTitular(Titular titular){
+        this.titular=titular;
+        if(titular!=null && titular.getPasaporte()!=this){
+            titular.setPasaporte(this);
+        }
+    }
+    
+    public Titular getTitular(){
+        return titular;
     }
 }
