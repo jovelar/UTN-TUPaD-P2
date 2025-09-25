@@ -16,23 +16,14 @@ public class Pasaporte {
     private int numero;
     private String fechaEmision;
     private Foto foto;
-    public Pasaporte()
-    {
+    
+    public Pasaporte(){
+        
     }
     
-    public Pasaporte(int numero,String fechaEmision){
+    public Pasaporte(int numero, String fechaEmision, String imagen, String formato){
         this.numero=numero;
         this.fechaEmision=fechaEmision;
-    }
-    
-    public void setFoto(Foto foto){
-        this.foto=foto;
-        if(foto!=null && foto.getPasaporte()!=this){
-            foto.setPasaporte(this);
-        }
-    }
-    
-    public Foto getFoto(){
-        return foto;
+        this.foto=new Foto(imagen, formato);
     }
 }

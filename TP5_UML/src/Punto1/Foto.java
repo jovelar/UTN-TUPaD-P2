@@ -11,21 +11,14 @@ package Punto1;
  * @author isaia
  */
 public class Foto {
-    private String foto;
-    private Pasaporte pasaporte;
-    
-    public Foto(String foto){
-        this.foto=foto;
+    private String imagen;
+    private String formato;
+    public Foto(){
+        
     }
     
-    public void setPasaporte(Pasaporte pasaporte){
-        this.pasaporte=pasaporte;
-        if(pasaporte!=null && pasaporte.getFoto()!=this){
-            pasaporte.setFoto(this);
-        }
-    }
-    
-    public Pasaporte getPasaporte(){
-        return pasaporte;
+    public Foto(String imagen, String formato){
+        this.imagen=imagen;
+        this.formato=formato;
     }
 }
