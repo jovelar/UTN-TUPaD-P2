@@ -156,15 +156,34 @@ public class Main {
         universidad.asignarProfesorACurso("C5","P3");
         
         //Punto 4
-        //universidad.listarCursos();
-        //universidad.listarProfesores();
+        
+        System.out.println("\nPunto 4 \n ***Cursos con sus profesores***");
+        universidad.listarCursos();
+        System.out.println("\n***Profesores con sus cursos***");
+        universidad.listarProfesores();
         
         //Punto 5
+        System.out.println("\nPunto 5");
+        universidad.reAsignarProfesor("C1", "P3");
+        universidad.listarCursos();
         
         //Punto 6
+        System.out.println("\nPunto 6 \n eliminado el curso Contabilidad");
         universidad.eliminarCurso("C5");
         universidad.listarCursos();
         universidad.listarProfesores();
+        
+        //Punto 7
+        System.out.println("\nPunto 7 \n eliminando profesor Diana Marquez");
+        universidad.eliminarProfesor("P2");
+        universidad.listarProfesores();
+        System.out.println();
+        universidad.listarCursos();
+        
+        //Punto 8
+        System.out.println("\nPunto 8");
+        universidad.reporteCursosXProfesor();
+        
     }
     public static void main(String[] args) {
         // TODO code application logic here

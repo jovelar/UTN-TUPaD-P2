@@ -109,5 +109,54 @@ public class Universidad {
         
     }
     
+    public void eliminarProfesor(String id){
+        Profesor p=null;
+        
+        for(Profesor prof:profesores){
+            if(prof.getId().equals(id)){
+                p=prof;
+            }
+        }
+        
+        if(p!=null){
+            for(int x=p.getCursos().size()-1;x>=0;x--){
+                p.getCursos().get(x).setProfesor(null);
+            }
+            profesores.remove(p);            
+        }
+    }
+    
+    
+    public void reAsignarProfesor(String codigoCurso,String idProfesor){
+        
+        Profesor profesorAMover=null;
+        
+        for(Profesor p:profesores){
+            if(p.getId().equals(idProfesor)){
+                profesorAMover=p;
+            }
+        }
+        
+        Curso cur=null;
+        if(profesorAMover!=null){
+            for(Curso c: cursos){
+                if(c.getCodigo().equals(codigoCurso)){
+                    cur=c;
+                }
+            }            
+        }
+        
+        if(profesorAMover!=null && cur!=null){
+            cur.setProfesor(profesorAMover);
+        }
+        
+    }
+    
+    public void reporteCursosXProfesor(){
+        for(Profesor p:profesores){
+            System.out.println("El profesor "+p.getNombre()+" tiene asignado "+p.cursos.size()+" cursos");
+        }
+    }
+    
     
 }
