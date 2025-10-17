@@ -33,19 +33,36 @@ public class Inventario {
         }
     }
     
+    public Producto buscarProductoPorId(String id){
+        Producto resultado=null;
+        
+        for(Producto p: productos){
+            if(p.getId().equals(id)){
+                resultado=p;
+            }
+        }
+        return resultado;
+    }
+        
     public void eliminarProducto(String id){
-         for(Producto p: productos ){
-             if(p.getId().equals(id)){
-                 productos.remove(p);
-             }
-         }
+        int pos=-1;
+        for(int x=0; x<productos.size();x++){
+            if(productos.get(x).getId().equals(id)){
+                pos=x;
+            }
+        }
+        if(pos!=-1){
+            productos.remove(pos);
+        }
     }
     
     public void actualizarStock(String id, int nuevaCantidad){
-        for(Producto p: productos){
-            if(p.getId().equals(id))
+        for(int x=0; x<productos.size();x++){
+            
+            if(productos.get(x).getId().equals(id))
             {
-                p.setCantidad(nuevaCantidad);
+                Producto productoAModificar = productos.get(x);
+                productoAModificar.setCantidad(nuevaCantidad);
             }
         }
     }
@@ -77,20 +94,19 @@ public class Inventario {
         System.out.println("El producto con mayor stock es "+mayor.toString());
     }
     
-    public ArrayList<Producto> filtrarProductosPorPrecio(double min, double max){
-        ArrayList<Producto> productosFiltrados = new ArrayList<>();
+    public void filtrarProductosPorPrecio(double min, double max){
+        System.out.println("Productos que se encuentran entre $"+min+" y $"+max);
         for(Producto p: productos){
             if(p.getPrecio()>=min && p.getPrecio()<=max){
-                productosFiltrados.add(p);
+                System.out.println(p.toString());
             }
         }
-        return productosFiltrados;
     }
     
     public void mostrarCategoriasDisponibles(){
         CategoriaProducto categorias[]= CategoriaProducto.values();
         for(CategoriaProducto cat: categorias){
-            System.out.println(cat.toString());
+            System.out.println(cat.toString()+":"+cat.getDescripcion());
         }
     }
 }

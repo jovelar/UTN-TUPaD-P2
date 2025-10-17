@@ -73,12 +73,12 @@ public class Producto {
     
     
     public void mostrarInfo(){
-        System.out.println("ID: "+id+",NOMBRE: "+nombre+",PRECIO: "+precio+",CANTIDAD: "+", CATEGORIA: "+categoria.getDescripcion());
+        System.out.println("ID: "+id+",NOMBRE: "+nombre+",PRECIO: "+precio+",CANTIDAD: "+cantidad+", CATEGORIA: "+categoria.getDescripcion());
     }
     
     @Override
     public String toString(){
-        return ("ID: "+id+",NOMBRE: "+nombre+",PRECIO: "+precio+",CANTIDAD: "+", CATEGORIA: "+categoria.getDescripcion());
+        return ("ID: "+id+",NOMBRE: "+nombre+",PRECIO: "+precio+",CANTIDAD: "+cantidad+", CATEGORIA: "+categoria.getDescripcion());
     }
     
 }
