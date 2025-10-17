@@ -81,6 +81,7 @@ public class Main {
     }
     
     public static void parteLibros(){
+         System.out.println("\n\n########## Ejercicios de Bliblioteca y libros ##########\n");
         //Punto 1
         Biblioteca biblioteca = new Biblioteca("Manuel Belgrano");
         
@@ -124,7 +125,7 @@ public class Main {
     }
     
     public static void parteUniversidad(){
-        
+         System.out.println("\n\n########## Ejercicios de Universidad, cursos y profesores ##########\n");
         Universidad universidad = new Universidad("UTN");
         //Punto 1
         Profesor prof1 = new Profesor("P1", "Roberto Diaz", "Ingeniero en Sistemas");
@@ -186,11 +187,10 @@ public class Main {
         
     }
     public static void main(String[] args) {
-        // TODO code application logic here
         
-        //parteInventario();
+        parteInventario();
         
-        //parteLibros();
+        parteLibros();
         
         parteUniversidad();
     }
