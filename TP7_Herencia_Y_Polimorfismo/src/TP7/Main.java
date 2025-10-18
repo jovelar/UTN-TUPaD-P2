@@ -18,11 +18,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void ejercicioVehiculos(){
+        System.out.println("####### EJERCICIOS DE AUTO ####### \n");
         Auto auto1=new Auto(3,"FIAT", "Palio 98");
         auto1.mostrarInfo();
     }
     
     public static void ejercicioFiguras(){
+        System.out.println("\n####### EJERCICIOS DE FIGURAS GEOMETRICAS #######\n");
         List<Figura>figuras = new ArrayList<>();
         figuras.add(new Circulo(9.9,"Circulo 1"));
         figuras.add(new Circulo(13.2, "Circulo 2"));
@@ -35,6 +37,7 @@ public class Main {
     }
     
     public static void ejercicioEmpleados(){
+        System.out.println("\n####### EJERCICIOS DE EMPLEADOS #######\n");
         List<Empleado>empleados = new ArrayList<>();
         empleados.add(new EmpleadoPlanta(70000.00, 24, "Julio"));
         empleados.add(new EmpleadoTemporal(45000, 20, "Antonio"));
@@ -71,7 +74,7 @@ public class Main {
     
     public static void ejercicioAnimales(){
         List<Animal> animales = new ArrayList<>();
-        
+        System.out.println("\n####### EJERCICIOS DE ANIMALES #######\n");
         animales.add(new Perro("Perro color marron"));
         animales.add(new Gato("Gato marmolado"));
         animales.add(new Vaca("Vaca lechera"));
@@ -85,11 +88,11 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        //ejercicioVehiculos();
+        ejercicioVehiculos();
         
-        //ejercicioFiguras();
+        ejercicioFiguras();
         
-        //ejercicioEmpleados();
+        ejercicioEmpleados();
         
         ejercicioAnimales();
     }
