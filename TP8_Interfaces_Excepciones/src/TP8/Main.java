@@ -4,7 +4,12 @@
  */
 package TP8;
 
+import Excepciones.EdadInvalidaException;
 import Interfaces.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 /**
  *
@@ -17,6 +22,7 @@ public class Main {
      */
     
     public static void ejercicioPedidos(){
+        System.out.println("\n####### INTERFACES\n");
         Pedido pedido= new Pedido();
         pedido.agregarAPedido(new Producto("12 Empanadas carne horno", 14400.00));
         pedido.agregarAPedido(new Producto("1 Muzza grande", 18000.00));
@@ -38,7 +44,12 @@ public class Main {
         pedido.cambiarEstado("Enviado!");
         
     }
+    
     public static void ejerciciosExcepciones(Scanner s){
+        
+        
+        //Punto 1
+        System.out.println("####### PUNTO 1 EXCEPCIONES");
             int n1;
             int n2;
             
@@ -56,11 +67,90 @@ public class Main {
                 System.out.println("No se puede dividir por 0");
             }
             
+        //Punto 2
+        System.out.println("\n####### PUNTO 2 EXCEPCIONES\n");
+            s.nextLine();
+            System.out.print("Ingrese un numero: ");
+            String palabra=s.nextLine();
+            
+            int numero;
+            
+            try{
+                numero=Integer.parseInt(palabra);
+                System.out.println("El texto "+numero+" fue convertido a numero");
+            }catch(NumberFormatException n){
+                System.out.println("Error, no se puede convertir");
+            }
+        
+        
+        //Punto 3
+        System.out.println("\n####### PUNTO 3 EXCEPCIONES\n");
+        System.out.println("Ingrese el nombre del archivo a abrir: --MUPPETS.TXT--");
+        String nArchivo=s.nextLine();
+        FileReader fr=null;
+        
+        try{
+            fr=new FileReader(nArchivo);
+            int letra;
+            
+           while ((letra = fr.read()) != -1) {        
+               System.out.println(letra);
+            }
+        }catch(FileNotFoundException f){
+            System.out.println("ERROR, el archivo no existe");
+        }catch(IOException e){
+            System.out.println("hubo un error");
+        }
+        finally{
+            
+            try {
+                if(fr!=null){
+                    fr.close();
+                }
+            } catch (IOException ex) {
+                System.getLogger(Main.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+            
+        }
+        
+        
+        //Punto 4
+        System.out.println("\n####### PUNTO 4 EXCEPCIONES\n");
+        try{
+            System.out.println("Ingrese una edad: ");
+            int edad = s.nextInt();
+                    if(edad<0){
+                        throw new EdadInvalidaException("La edad no puede ser menor a 0");
+            }
+        }catch(EdadInvalidaException e){
+            System.out.println(e.getMessage());
+        }
+        
+        
+        //Punto 5
+        System.out.println("\n####### PUNTO 5 EXCEPCIONES\n");
+        s.nextLine();
+        System.out.println("Ingrese el nombre del archivo a abrir: --PLATEROYYO.TXT--");
+        String nArchivo2=s.nextLine();
+        FileReader fr2=null;
+        
+        try(BufferedReader br= new BufferedReader(new FileReader(nArchivo2))){
+            String palabra2;
+            while((palabra2=br.readLine())!=null){
+                System.out.println(palabra2);
+            }
+        }catch(FileNotFoundException f){
+            System.out.println("ERROR, el archivo no existe");
+        }catch(IOException e){
+            System.out.println("hubo un error");
+        }
+
     }
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
-        //ejercicioPedidos();
+        ejercicioPedidos();
         ejerciciosExcepciones(s);
+        s.close();
     }
     
 }
