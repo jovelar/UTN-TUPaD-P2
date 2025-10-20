@@ -6,8 +6,9 @@ package Interfaces;
 
 /**
  *
- * @author Isaias
+ * @author isaia
  */
-public interface Pago {
-    public double procesarPago(double costo);
+public interface Notificable {
+    
+    public void notificarCambio(String mensaje);
 }

@@ -9,5 +9,5 @@ package Interfaces;
  * @author Isaias
  */
 public interface PagoConDescuento extends Pago{
-    public double aplicarDecuento();
+    public double aplicarDecuento(double costo);
 }

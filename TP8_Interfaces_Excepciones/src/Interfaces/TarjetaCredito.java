@@ -8,6 +8,11 @@ package Interfaces;
  *
  * @author Isaias
  */
-public class TarjetaCredito {
+public class TarjetaCredito implements Pago{
+
+    @Override
+    public double procesarPago(double costo) {
+        return costo;
+    }
     
 }

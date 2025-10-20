@@ -8,6 +8,16 @@ package Interfaces;
  *
  * @author Isaias
  */
-public class Paypal {
+public class Paypal implements PagoConDescuento{
+    
+    @Override
+    public double aplicarDecuento(double costo) {
+        return costo *0.8;
+    }
+
+    @Override
+    public double procesarPago(double costo) {
+        return aplicarDecuento(costo);
+    }
     
 }
